@@ -30,15 +30,15 @@ div{
     width: 100%;
     height: 100%;
     text-align: center;
-    padding:20px 0 ;
+    padding: 20px 0px 25px 0px ;
     img {
-      width: 80%;
+      width: 70%;
     }
   }
 
   h2 {
     margin: 10px;
-    font-size: 15px;
+    font-size: 20px;
     text-transform: uppercase;
     color: white;
   }

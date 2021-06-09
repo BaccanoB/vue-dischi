@@ -19,8 +19,10 @@ export default {
 </script>
 
 <style lang="scss">
- @import './style/general';
-//  @import '~/@fontsource/roboto/index.css';
+@import './style/general';
+@import '~@fontsource/roboto/index.css';
+@import '~@fontsource/roboto/700.css';
+@import '~@fontsource/roboto/500.css';
 </style>
  
  
