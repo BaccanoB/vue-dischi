@@ -12,11 +12,12 @@ export default {
 
 <style lang="scss" scoped>
     @import '../style/mixins';
+    @import '../style/variables';
     div {
         @include flex;
         width: 100%;
         height: 50px;
-        background-color: #2E3A46;
+        background-color: $spotify_color ;
 
         img {
             width: 40px;
