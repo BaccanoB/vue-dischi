@@ -20,5 +20,7 @@ export default {
 
 <style lang="scss">
  @import './style/general';
+//  @import '~/@fontsource/roboto/index.css';
 </style>
+ 
  

@@ -37,6 +37,7 @@ div{
   }
 
   h2 {
+    margin: 10px;
     font-size: 15px;
     text-transform: uppercase;
     color: white;
