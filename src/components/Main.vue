@@ -40,7 +40,9 @@ export default {
             .then(
                 (response)=> {
                     this.disks = response.data.response;
-                    this.loading = false;
+                    setTimeout(()=>{
+                        this.loading = false;
+                    },3000)
                 }
             )
     }
@@ -48,6 +50,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    @import '../style/mixins';
     @import '../style/variables.scss';
 
     section {
@@ -57,9 +60,8 @@ export default {
         font-family: $main_font;
 
         .container {
-            display: flex;
+            @include flex;
             flex-wrap: wrap;
-            align-items: center;
             justify-content: center;
             width: 75%;
             margin: 0 auto;
