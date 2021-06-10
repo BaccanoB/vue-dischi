@@ -22,7 +22,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+  @import '../style/variables.scss';
 div{
   text-align: center;
 
@@ -39,7 +39,7 @@ div{
   h2 {
     margin: 10px;
     font-size: 20px;
-    text-transform: uppercase;
+    text-transform: $text_style;
     color: white;
   }
 

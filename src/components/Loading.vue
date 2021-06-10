@@ -39,6 +39,7 @@ export default {
             }
 
             i {
+                color: #1ED760;
                 font-size: 50px;
                 animation: rotate .5s linear infinite;
             }

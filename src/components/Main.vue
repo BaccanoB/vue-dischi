@@ -1,5 +1,6 @@
 <template>
   <section v-if="!loading">
+      <Searching @search="searchingGenre" />
       <div class="container">
           <div
             v-for='(disk,index) in disks'
@@ -21,11 +22,13 @@
 import Disk from './Disk.vue';
 import axios from 'axios';
 import Loading from './Loading.vue';
+import Searching from './Searching.vue';
 export default {
     name:'Main',
     components: {
         Disk,
-        Loading
+        Loading,
+        Searching
     },
     data:function(){
         return{
@@ -45,6 +48,11 @@ export default {
                     },3000)
                 }
             )
+    },
+    methods: {
+        searchingGenre: function(text){
+            console.log(text);
+        }
     }
 }
 </script>
