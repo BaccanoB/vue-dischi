@@ -1,10 +1,10 @@
 <template>
   <section v-if="!loading">
-      <Searching @search="searchingGenre"
-       />
+      <Searching @search="searchingGenre" />
+      <Artist @search="searchingGenre"/>
       <div class="container">
           <div
-            v-for='(disk,index) in filteredDisks'
+            v-for='(disk,index) in filteredGenre'
             :key='index'
             class="disk">
                 <Disk
@@ -24,12 +24,14 @@ import Disk from './Disk.vue';
 import axios from 'axios';
 import Loading from './Loading.vue';
 import Searching from './Searching.vue';
+import Artist from './Artist.vue';
 export default {
     name:'Main',
     components: {
         Disk,
         Loading,
-        Searching
+        Searching,
+        Artist
     },
     data:function(){
         return{
@@ -40,13 +42,13 @@ export default {
         }
     },
     computed: {
-        filteredDisks: function(){
+        filteredGenre: function(){
              if(this.selectGenre == "") {
                 return this.disks;
             }
             const selectedArray = this.disks.filter(
                 (element) => {
-                    return element.genre.includes(this.selectGenre);
+                    return element.genre.includes(this.selectGenre) || element.author.includes(this.selectGenre)
                 } 
             );
             return selectedArray;
@@ -55,6 +57,9 @@ export default {
     methods: {
         searchingGenre: function(text){
             this.selectGenre = text;
+        },
+        searchingArtist: function(text){
+            this.selectArtist = text;
         }
     },
     created: function(){

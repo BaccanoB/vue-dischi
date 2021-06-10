@@ -1,6 +1,6 @@
 <template>
   <div id="select_bar">
-          <select
+        <select
            v-model="searchGenre"
            @change="$emit('search', searchGenre)"
            name="genre" id="genre"> 
@@ -9,8 +9,8 @@
               <option value="Pop">Pop</option>
               <option value="Jazz">Jazz</option>
               <option value="Metal">Metal</option>
-          </select>
-      </div>
+        </select>
+    </div>
 </template>
 
 <script>
@@ -18,7 +18,7 @@ export default {
     name:'Searching',
     data: function() {
          return {
-            searchGenre: '',
+            searchGenre: ''
         }
     }
 }
