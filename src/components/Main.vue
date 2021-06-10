@@ -1,9 +1,10 @@
 <template>
   <section v-if="!loading">
-      <Searching @search="searchingGenre" />
+      <Searching @search="searchingGenre"
+       />
       <div class="container">
           <div
-            v-for='(disk,index) in disks'
+            v-for='(disk,index) in filteredDisks'
             :key='index'
             class="disk">
                 <Disk
@@ -34,7 +35,26 @@ export default {
         return{
             urlApi:'https://flynn.boolean.careers/exercises/api/array/music',
             disks:[],
-            loading: true
+            loading: true,
+            selectGenre: ""
+        }
+    },
+    computed: {
+        filteredDisks: function(){
+             if(this.selectGenre == "") {
+                return this.disks;
+            }
+            const selectedArray = this.disks.filter(
+                (element) => {
+                    return element.genre.includes(this.selectGenre);
+                } 
+            );
+            return selectedArray;
+        }
+    },
+    methods: {
+        searchingGenre: function(text){
+            this.selectGenre = text;
         }
     },
     created: function(){
@@ -48,11 +68,6 @@ export default {
                     },3000)
                 }
             )
-    },
-    methods: {
-        searchingGenre: function(text){
-            console.log(text);
-        }
     }
 }
 </script>

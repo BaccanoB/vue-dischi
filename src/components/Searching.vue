@@ -3,12 +3,12 @@
           <select
            v-model="searchGenre"
            @change="$emit('search', searchGenre)"
-           name="genre" id="genre">
-              <option value="all">All genres</option>
-              <option value="rock">Rock</option>
-              <option value="pop">Pop</option>
-              <option value="jazz">Jazz</option>
-              <option value="metal">Metal</option>
+           name="genre" id="genre"> 
+              <option value="">All genres</option>
+              <option value="Rock">Rock</option>
+              <option value="Pop">Pop</option>
+              <option value="Jazz">Jazz</option>
+              <option value="Metal">Metal</option>
           </select>
       </div>
 </template>
